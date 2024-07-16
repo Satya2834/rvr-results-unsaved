@@ -96,6 +96,26 @@ const credits_r20_cse = {
 var tot_gpa = {};
 var cumulative_gpa = {};
 
+function showProgressBar() {
+    var progressBar = document.getElementById('progress_bar');
+    progressBar.style.display = 'block';
+}
+
+function hideProgressBar() {
+    var progressBar = document.getElementById('progress_bar');
+    progressBar.style.display = 'none';
+}
+
+function showProgress() {
+    setTimeout(function() {
+        var progressBar = document.getElementById('progress');
+        var processingMessage = document.getElementById('processing-message');
+        progressBar.style.animation = 'none';
+        progressBar.style.width = '100%';
+        processingMessage.textContent = 'Fetching complete! Wait a few seconds while we arrange your data!';
+    }, 2 * 5 * 1000); //1000 = 1 sec
+}
+
 function addResultToMainPage(name, regNo, grades, tot_gpa, cumulative_gpa){
 
     const stu_details = document.createElement('div');
@@ -168,13 +188,17 @@ const fetchWithRetry = async (url, retries = 3, interval = 5000) => {
     for (let i = 0; i < retries; i++) {
         try {
             const response = await axios.get(url, { responseType: 'text' });
+            hideProgressBar();
             return response.data;
         } catch (error) {
             if (i < retries - 1) {
                 console.log(`Attempt ${i + 1} failed. Retrying in ${interval / 1000} seconds...`);
                 await new Promise(resolve => setTimeout(resolve, interval));
             } else {
+                hideProgressBar();
+                document.getElementById("save result").innerHTML = "Server Down please try again";
                 throw new Error(`Request failed after ${retries} attempts: ${error.message}`);
+                
             }
         }
     }

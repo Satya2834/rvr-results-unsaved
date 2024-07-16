@@ -15,9 +15,18 @@
         <input type="radio" id="radioButton" name="r20" value="r20_cse" checked> R20 CSE
         </div>
     </div>
-    <button id="fetchButton">Fetch HTML</button>
+    <button id="fetchButton" onclick="showProgressBar()">Fetch results</button>
+
+    <div class="progress_bar" id="progress_bar" style="display: none;">
+        <h1>Processing...</h1>
+        <div id="loading-bar">
+            <div id="progress"></div>
+        </div>
+        <div id="processing-message">Please wait while we fetch your data...</div>
+    </div>
     
-    <div id="result"></div>
+    <br><br>
+    <div id="save result">To save your results to cloud, visit <a href="https://rvr-results.onrender.com/">Site</a></div>
 
     <script src="script.js"></script>
 </body>
