@@ -116,7 +116,34 @@ function showProgress() {
     }, 2 * 5 * 1000); //1000 = 1 sec
 }
 
+document.getElementById("server").addEventListener('change', () => {
+    const selected_server = document.getElementById("server").value;
+    const elements = document.getElementsByClassName('acquire_temp_cors');
+    
+    for (let i = 0; i < elements.length; i++) {
+        if (selected_server === "server1") {
+            elements[i].style.display = 'none';
+        } else {
+            elements[i].style.display = 'block';
+        }
+    }
+});
+
+document.getElementById("textInput").addEventListener('input', () => {
+    const reg_no = document.getElementById("textInput").value.length;
+    const res_button = document.getElementById("fetchButton");
+    if (reg_no==8 || reg_no==9){
+        res_button.style.cursor = 'pointer';
+        res_button.disabled = false;
+    } else {
+        res_button.style.cursor = 'not-allowed';
+        res_button.disabled = true;
+    }
+});
+
 function addResultToMainPage(name, regNo, grades, tot_gpa, cumulative_gpa){
+
+    const display_results = document.getElementById("results");
 
     const stu_details = document.createElement('div');
     stu_details.className = "stu_details";
@@ -130,7 +157,8 @@ function addResultToMainPage(name, regNo, grades, tot_gpa, cumulative_gpa){
     headerRow.appendChild(headerCell2);
     table.appendChild(headerRow);
     stu_details.appendChild(table);
-    document.body.appendChild(stu_details);
+
+    display_results.appendChild(stu_details);
 
     for(const [semester, subjects] of Object.entries(grades)){
         const sem_div = document.createElement('div');
@@ -180,17 +208,22 @@ function addResultToMainPage(name, regNo, grades, tot_gpa, cumulative_gpa){
         gpa_p2.appendChild(strong_p2);
         sem_div.appendChild(gpa_p2);
 
-        document.body.appendChild(sem_div);
+        display_results.appendChild(sem_div);
     }
 }
 
 const fetchWithRetry = async (url, retries = 3, interval = 5000) => {
     for (let i = 0; i < retries; i++) {
         try {
-            // const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-            // const response = await axios.get(proxyUrl+url, { responseType: 'text' });
+            var proxyUrl;
+            var server = document.getElementById("server");
 
-            const proxyUrl = 'https://api.allorigins.win/get?url=';
+            if (server.value == "server1"){
+                proxyUrl = 'https://api.allorigins.win/get?url=';
+            } else {
+                proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+            }
+
             const response = await axios.get(proxyUrl+url, { responseType: 'text' });
 
             hideProgressBar();

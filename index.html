@@ -15,9 +15,15 @@
         <input type="radio" id="radioButton" name="r20" value="r20_cse" checked> R20 CSE
         </div>
     </div>
-    <iframe class="acquire_temp_cors" id="acquire_temp_cors" src="https://cors-anywhere.herokuapp.com/corsdemo/"></iframe>
+    <p class="acquire_temp_cors">Click the button in below box (iframe) before fetching the results. Else you will get a "server down" error.</p>
+    <iframe class="acquire_temp_cors" id="acquire_temp_cors" style="box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;" src="https://cors-anywhere.herokuapp.com/corsdemo/"></iframe>
     <br>
-    <button id="fetchButton" onclick="showProgressBar()">Fetch results</button>
+    <button id="fetchButton" onclick="showProgressBar()" disabled>Fetch results</button>
+
+    <select id="server">
+        <option value="server1" selected>Server 1</option>
+        <option value="server2">Server 2</option>
+    </select>
 
     <div class="progress_bar" id="progress_bar" style="display: none;">
         <h1>Processing...</h1>
@@ -28,8 +34,11 @@
     </div>
     
     <br><br>
-    <div id="save result">To save your results to cloud, visit <a href="https://rvr-results.onrender.com/">Site</a> <- this site might take 1 min to load.</div>
-
+    <div id="results"></div>
+    <br>
+    <div id="save result">To save your results to cloud, visit <a href="https://rvr-results.onrender.com/" target="_blank">Site</a> <- this site might take 1 min to load.</div>
+    <br>
+    <div>To predict your future GPA, CGPA visit <a href="https://ujjwalr-y20cs161.github.io/GPA/" target="_blank">Site</a></div>
     <script src="script.js"></script>
 </body>
 </html>
