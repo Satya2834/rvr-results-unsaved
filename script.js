@@ -187,7 +187,12 @@ function addResultToMainPage(name, regNo, grades, tot_gpa, cumulative_gpa){
 const fetchWithRetry = async (url, retries = 3, interval = 5000) => {
     for (let i = 0; i < retries; i++) {
         try {
-            const response = await axios.get(url, { responseType: 'text' });
+            // const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+            // const response = await axios.get(proxyUrl+url, { responseType: 'text' });
+
+            const proxyUrl = 'https://api.allorigins.win/get?url=';
+            const response = await axios.get(proxyUrl+url, { responseType: 'text' });
+
             hideProgressBar();
             return response.data;
         } catch (error) {
@@ -198,13 +203,13 @@ const fetchWithRetry = async (url, retries = 3, interval = 5000) => {
                 hideProgressBar();
                 document.getElementById("save result").innerHTML = "Server Down please try again";
                 throw new Error(`Request failed after ${retries} attempts: ${error.message}`);
-                
             }
         }
     }
 };
 
 document.getElementById('fetchButton').addEventListener('click', () => {
+    showProgressBar();
     var textValue = document.getElementById('textInput').value.toLowerCase();
     var radioButtonValue;
     var radioButtons = document.getElementsByName('r20');
@@ -214,7 +219,7 @@ document.getElementById('fetchButton').addEventListener('click', () => {
             break;
         }
     }
-    const url = 'https://cors-anywhere.herokuapp.com/https://rvrjcce.ac.in/examcell/results/regnoresultsR1.php?q='+textValue;
+    const url = 'https://rvrjcce.ac.in/examcell/results/regnoresultsR1.php?q='+textValue;
 
     fetchWithRetry(url)
         .then(htmlResponse => {
@@ -224,7 +229,7 @@ document.getElementById('fetchButton').addEventListener('click', () => {
 
             const nameElement = doc.querySelector('font');
             const name = nameElement.querySelectorAll('b')[1].textContent.trim();
-            const regNo = nameElement.textContent.match(/Reg\.No\. : ([\w\s]+)/)[1].trim().split(" ")[0];
+            const regNo = textValue;
 
             const gradesTable = doc.querySelectorAll('table');
             const rows = gradesTable[0].querySelectorAll('tr');
@@ -290,6 +295,9 @@ document.getElementById('fetchButton').addEventListener('click', () => {
                     sum_of_gpa_cred += sum_curr_cred*tot_gpa[sem];
                 }
                 cumulative_gpa[sem] = (sum_of_gpa_cred/sum_of_tot_credits).toFixed(2);
+            }
+            for (let sem of Object.keys(tot_gpa)){
+                tot_gpa[sem] = tot_gpa[sem].toFixed(2);
             }
 
             addResultToMainPage(name, regNo, grades, tot_gpa, cumulative_gpa);
