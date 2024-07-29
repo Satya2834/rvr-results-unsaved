@@ -661,17 +661,19 @@ document.getElementById('fetchButton').addEventListener('click', () => {
             
             var sum_of_tot_credits = 0;
             var credits;
-            if(radioButtonValue=="r20_cse" || radioButtonValue=="r20_it" || radioButtonValue=="r20_cse_ds" || radioButtonValue=="r20_cse_iot"){
+            
+            if(regNo.includes('cs') || regNo.includes('it') || regNo.includes('cd') || radioButtonValue=="r20_cse" || radioButtonValue=="r20_it" || radioButtonValue=="r20_cse_ds" || radioButtonValue=="r20_cse_iot"){
                 credits = credits_r20_cse;
-            } else if (radioButtonValue=="r20_cse_ai_ml"){
+            } else if (regNo.includes('cm') || radioButtonValue=="r20_cse_ai_ml"){
                 credits = credits_r20_cse_ai_ml;
-            } else if (radioButtonValue=="r20_ece"){
+            } else if (regNo.includes('ec') || radioButtonValue=="r20_ece"){
                 credits = credits_r20_ece;
-            } else if (radioButtonValue=="r20_eee"){
+            } else if (regNo.includes('ee') || radioButtonValue=="r20_eee"){
                 credits = credits_r20_eee;
-            } else if (radioButtonValue=="r20_civil"){
+            } else if (regNo.includes('ce') || radioButtonValue=="r20_civil"){
                 credits = credits_r20_civil;
             }
+
             for (let sem of Object.keys(grades)){
                 var sem_gpa = 0;
                 for (let sub of Object.keys(grades[sem])){
