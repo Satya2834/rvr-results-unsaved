@@ -1,5 +1,5 @@
 const grade_to_points = {
-    "Aplus": 10,
+    "A+": 10,
     "A": 9,
     "B": 8,
     "C": 7,
@@ -430,8 +430,8 @@ const credits_r20_civil = {
     }
 };
 
-var tot_gpa = {};
-var cumulative_gpa = {};
+var tot_gpa;
+var cumulative_gpa;
 
 function clearContent(elementID) { 
     document.getElementById(elementID).innerHTML = ""; 
@@ -600,6 +600,9 @@ document.getElementById('fetchButton').addEventListener('click', () => {
     fetchWithRetry(url)
         .then(htmlResponse => {
 
+            tot_gpa = {};
+            cumulative_gpa = {};
+
             const parser = new DOMParser();
             const doc = parser.parseFromString(htmlResponse, 'text/html');
 
@@ -645,9 +648,6 @@ document.getElementById('fetchButton').addEventListener('click', () => {
                 grades[semester] = {};
                 const grades_list = semesterGrades[v][1].split(" ");
                 for(let i=0; i<grades_list.length; i++){
-                    if(grades_list[i]=="A+"){
-                        grades_list[i] = "Aplus";
-                    }
                     if(i<subjects.length && grades_list[i]!="--"){
                         grades[semester][subjects[i]] = grades_list[i];
                     } else if (grades_list[i]!="--") {
