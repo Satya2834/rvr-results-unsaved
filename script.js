@@ -93,8 +93,349 @@ const credits_r20_cse = {
     }
 };
 
+const credits_r20_cse_ai_ml = {
+    "I": {
+        "Sub1": 3,
+        "Sub2": 3,
+        "Sub3": 3,
+        "Sub4": 3,
+        "Lab1": 1.5,
+        "Lab2": 1.5,
+        "Lab3": 3,
+        "Lab4": 1.5,
+        "Lab5": 0
+    },
+    "II": {
+        "Sub1": 3,
+        "Sub2": 3,
+        "Sub3": 3,
+        "Sub4": 3,
+        "Sub5": 2,
+        "Lab1": 1.5,
+        "Lab2": 1.5,
+        "Lab3": 1.5,
+        "Lab4": 1,
+        "Lab5": 0
+    },
+    "III": {
+        "Sub1": 3,
+        "Sub2": 3,
+        "Sub3": 3,
+        "Sub4": 3,
+        "Sub5": 3,
+        "Lab1": 1.5,
+        "Lab2": 1.5,
+        "Lab3": 1.5,
+        "Lab4": 2,
+        "Lab5": 0
+    },
+    "IV": {
+        "Sub1": 3,
+        "Sub2": 3,
+        "Sub3": 3,
+        "Sub4": 3,
+        "Sub5": 3,
+        "Lab1": 1.5,
+        "Lab2": 1.5,
+        "Lab3": 1.5,
+        "Lab4": 2,
+        "Lab5": 0
+    },
+    "V": {
+        "Sub1": 3,
+        "Sub2": 3,
+        "Sub3": 3,
+        "Sub4": 3,
+        "Sub5": 3,
+        "Lab1": 1.5,
+        "Lab2": 1.5,
+        "Lab3": 1.5,
+        "Lab4": 2
+    },
+    "VI": {
+        "Sub1": 3,
+        "Sub2": 3,
+        "Sub3": 3,
+        "Sub4": 3,
+        "Sub5": 3,
+        "Lab1": 1.5,
+        "Lab2": 1.5,
+        "Lab3": 1.5,
+        "Lab4": 2
+    },
+    "VII": {
+        "Sub1": 3,
+        "Sub2": 3,
+        "Sub3": 3,
+        "Sub4": 3,
+        "Sub5": 3,
+        "Sub6": 3,
+        "Lab1": 3,
+        "Lab2": 2
+    },
+    "VIII": {
+        "Lab1": 12
+    }
+};
+
+const credits_r20_eee = {
+    "I": {
+        "Sub1": 3,
+        "Sub2": 3,
+        "Sub3": 3,
+        "Sub4": 3,
+        "Lab1": 1.5,
+        "Lab2": 1.5,
+        "Lab3": 3,
+        "Lab4": 1.5,
+        "Lab5": 0
+    },
+    "II": {
+        "Sub1": 3,
+        "Sub2": 3,
+        "Sub3": 3,
+        "Sub4": 3,
+        "Lab1": 1.5,
+        "Lab2": 1.5,
+        "Lab3": 3,
+        "Lab4": 1.5,
+        "Lab5": 0
+    },
+    "III": {
+        "Sub1": 3,
+        "Sub2": 3,
+        "Sub3": 3,
+        "Sub4": 3,
+        "Sub5": 3,
+        "Lab1": 1.5,
+        "Lab2": 1.5,
+        "Lab3": 1.5,
+        "Lab4": 2,
+        "Lab5": 0
+    },
+    "IV": {
+        "Sub1": 3,
+        "Sub2": 3,
+        "Sub3": 3,
+        "Sub4": 3,
+        "Sub5": 3,
+        "Lab1": 1.5,
+        "Lab2": 1.5,
+        "Lab3": 1.5,
+        "Lab4": 2,
+        "Lab5": 0
+    },
+    "V": {
+        "Sub1": 3,
+        "Sub2": 3,
+        "Sub3": 3,
+        "Sub4": 3,
+        "Sub5": 3,
+        "Lab1": 1.5,
+        "Lab2": 1.5,
+        "Lab3": 1.5,
+        "Lab4": 2
+    },
+    "VI": {
+        "Sub1": 3,
+        "Sub2": 3,
+        "Sub3": 3,
+        "Sub4": 3,
+        "Sub5": 3,
+        "Lab1": 1.5,
+        "Lab2": 1.5,
+        "Lab3": 1.5,
+        "Lab4": 2
+    },
+    "VII": {
+        "Sub1": 2,
+        "Sub2": 3,
+        "Sub3": 3,
+        "Sub4": 3,
+        "Sub5": 3,
+        "Lab1": 1.5,
+        "Lab2": 1,
+        "Lab3": 2
+    },
+    "VIII": {
+        "Lab1": 12
+    }
+};
+
+const credits_r20_ece = {
+    "I": {
+        "Sub1": 3,
+        "Sub2": 3,
+        "Sub3": 3,
+        "Sub4": 3,
+        "Lab1": 1.5,
+        "Lab2": 1,
+        "Lab3": 3,
+        "Lab4": 2,
+        "Lab5": 0
+    },
+    "II": {
+        "Sub1": 3,
+        "Sub2": 3,
+        "Sub3": 3,
+        "Sub4": 3,
+        "Lab1": 1.5,
+        "Lab2": 2,
+        "Lab3": 3,
+        "Lab4": 1,
+        "Lab5": 0
+    },
+    "III": {
+        "Sub1": 3,
+        "Sub2": 4,
+        "Sub3": 3,
+        "Sub4": 3,
+        "Sub5": 3,
+        "Lab1": 1,
+        "Lab2": 1.5,
+        "Lab3": 1,
+        "Lab4": 2,
+        "Lab5": 0
+    },
+    "IV": {
+        "Sub1": 3,
+        "Sub2": 3,
+        "Sub3": 4,
+        "Sub4": 3,
+        "Sub5": 3,
+        "Lab1": 1.5,
+        "Lab2": 1,
+        "Lab3": 1,
+        "Lab4": 2,
+        "Lab5": 0
+    },
+    "V": {
+        "Sub1": 3,
+        "Sub2": 3,
+        "Sub3": 3,
+        "Sub4": 3,
+        "Sub5": 3,
+        "Lab1": 1.5,
+        "Lab2": 2,
+        "Lab3": 1.5,
+        "Lab4": 2
+    },
+    "VI": {
+        "Sub1": 3,
+        "Sub2": 3,
+        "Sub3": 3,
+        "Sub4": 3,
+        "Sub5": 3,
+        "Lab1": 1.5,
+        "Lab2": 1.5,
+        "Lab3": 1,
+        "Lab4": 2
+    },
+    "VII": {
+        "Sub1": 3,
+        "Sub2": 3,
+        "Sub3": 3,
+        "Sub4": 3,
+        "Sub5": 3,
+        "Sub6": 3,
+        "Lab1": 3,
+        "Lab2": 2
+    },
+    "VIII": {
+        "Lab1": 12
+    }
+};
+
+const credits_r20_civil = {
+    "I": {
+        "Sub1": 3,
+        "Sub2": 3,
+        "Sub3": 3,
+        "Sub4": 3,
+        "Lab1": 1.5,
+        "Lab2": 1.5,
+        "Lab3": 3,
+        "Lab4": 1.5,
+        "Lab5": 0
+    },
+    "II": {
+        "Sub1": 3,
+        "Sub2": 3,
+        "Sub3": 3,
+        "Sub4": 3,
+        "Lab1": 1.5,
+        "Lab2": 1.5,
+        "Lab3": 3,
+        "Lab4": 1.5,
+        "Lab5": 0
+    },
+    "III": {
+        "Sub1": 3,
+        "Sub2": 3,
+        "Sub3": 3,
+        "Sub4": 3,
+        "Sub5": 3,
+        "Lab1": 1.5,
+        "Lab2": 1.5,
+        "Lab3": 1.5,
+        "Lab4": 2,
+        "Lab5": 0
+    },
+    "IV": {
+        "Sub1": 3,
+        "Sub2": 3,
+        "Sub3": 3,
+        "Sub4": 3,
+        "Sub5": 3,
+        "Lab1": 1.5,
+        "Lab2": 1.5,
+        "Lab3": 1.5,
+        "Lab4": 2,
+        "Lab5": 0
+    },
+    "V": {
+        "Sub1": 3,
+        "Sub2": 3,
+        "Sub3": 3,
+        "Sub4": 3,
+        "Sub5": 3,
+        "Lab1": 1.5,
+        "Lab2": 1.5,
+        "Lab3": 1.5,
+        "Lab4": 2
+    },
+    "VI": {
+        "Sub1": 3,
+        "Sub2": 3,
+        "Sub3": 3,
+        "Sub4": 3,
+        "Sub5": 3,
+        "Lab1": 1.5,
+        "Lab2": 1.5,
+        "Lab3": 1.5,
+        "Lab4": 2
+    },
+    "VII": {
+        "Sub1": 3,
+        "Sub2": 3,
+        "Sub3": 3,
+        "Sub4": 3,
+        "Sub5": 3,
+        "Sub6": 3,
+        "Lab1": 3,
+        "Lab2": 2
+    },
+    "VIII": {
+        "Lab1": 12
+    }
+};
+
 var tot_gpa = {};
 var cumulative_gpa = {};
+
+function clearContent(elementID) { 
+    document.getElementById(elementID).innerHTML = ""; 
+} 
 
 function showProgressBar() {
     var progressBar = document.getElementById('progress_bar');
@@ -231,10 +572,11 @@ const fetchWithRetry = async (url, retries = 3, interval = 5000) => {
         } catch (error) {
             if (i < retries - 1) {
                 console.log(`Attempt ${i + 1} failed. Retrying in ${interval / 1000} seconds...`);
+                document.getElementById("processing-message").innerHTML = `Attempt ${i + 1} failed. Retrying in ${interval / 1000} seconds...`;
                 await new Promise(resolve => setTimeout(resolve, interval));
             } else {
                 hideProgressBar();
-                document.getElementById("save result").innerHTML = "Server Down please try again";
+                document.getElementById("results").innerHTML = "Server Down please try again";
                 throw new Error(`Request failed after ${retries} attempts: ${error.message}`);
             }
         }
@@ -242,6 +584,7 @@ const fetchWithRetry = async (url, retries = 3, interval = 5000) => {
 };
 
 document.getElementById('fetchButton').addEventListener('click', () => {
+    clearContent("results");
     showProgressBar();
     var textValue = document.getElementById('textInput').value.toLowerCase();
     var radioButtonValue;
@@ -260,12 +603,26 @@ document.getElementById('fetchButton').addEventListener('click', () => {
             const parser = new DOMParser();
             const doc = parser.parseFromString(htmlResponse, 'text/html');
 
+            const gradesTable = doc.querySelectorAll('table');
+            const rows = gradesTable[0].querySelectorAll('tr');
+
+            // check for results
+            let found = true;
+
+            rows.forEach(row => {
+                const cellText = row.cells[0].textContent;
+                if (cellText.includes("IS NOT FOUND")) {
+                    found = false;
+                }
+            });
+
+            if (!found){
+                throw new Error("Regno not found");
+            }
+
             const nameElement = doc.querySelector('font');
             const name = nameElement.querySelectorAll('b')[1].textContent.trim();
             const regNo = textValue;
-
-            const gradesTable = doc.querySelectorAll('table');
-            const rows = gradesTable[0].querySelectorAll('tr');
 
             let semesterGrades = [];
 
@@ -304,8 +661,16 @@ document.getElementById('fetchButton').addEventListener('click', () => {
             
             var sum_of_tot_credits = 0;
             var credits;
-            if(radioButtonValue=="r20_cse"){
+            if(radioButtonValue=="r20_cse" || radioButtonValue=="r20_it" || radioButtonValue=="r20_cse_ds" || radioButtonValue=="r20_cse_iot"){
                 credits = credits_r20_cse;
+            } else if (radioButtonValue=="r20_cse_ai_ml"){
+                credits = credits_r20_cse_ai_ml;
+            } else if (radioButtonValue=="r20_ece"){
+                credits = credits_r20_ece;
+            } else if (radioButtonValue=="r20_eee"){
+                credits = credits_r20_eee;
+            } else if (radioButtonValue=="r20_civil"){
+                credits = credits_r20_civil;
             }
             for (let sem of Object.keys(grades)){
                 var sem_gpa = 0;
@@ -336,6 +701,11 @@ document.getElementById('fetchButton').addEventListener('click', () => {
             addResultToMainPage(name, regNo, grades, tot_gpa, cumulative_gpa);
         })
         .catch(error => {
+            if (error.message === "Regno not found") {
+                document.getElementById('results').innerHTML = 'RegNo not Found';
+            } else {
+                document.getElementById('results').innerHTML = 'Error in fetching or calculation';
+            }
             console.error('Error fetching data:', error);
         });
 });
