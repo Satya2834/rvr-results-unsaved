@@ -473,7 +473,15 @@ document.getElementById("server").addEventListener('change', () => {
 document.getElementById("textInput").addEventListener('input', () => {
     const reg_no = document.getElementById("textInput").value.length;
     const res_button = document.getElementById("fetchButton");
-    if (reg_no==8 || reg_no==9){
+    var radioButtonValue = false;
+    var radioButtons = document.getElementsByName('r20');
+    for (var i = 0; i < radioButtons.length; i++) {
+        if (radioButtons[i].checked) {
+            radioButtonValue = radioButtons[i].value;
+            break;
+        }
+    }
+    if ((reg_no==8 || reg_no==9) && radioButtonValue){
         res_button.style.cursor = 'pointer';
         res_button.disabled = false;
     } else {
@@ -662,17 +670,28 @@ document.getElementById('fetchButton').addEventListener('click', () => {
             var sum_of_tot_credits = 0;
             var credits;
             
-            if(regNo.includes('cs') || regNo.includes('it') || regNo.includes('cd') || radioButtonValue=="r20_cse" || radioButtonValue=="r20_it" || radioButtonValue=="r20_cse_ds" || radioButtonValue=="r20_cse_iot"){
+            if(regNo.includes('cs') || regNo.includes('it') || regNo.includes('cd')){
                 credits = credits_r20_cse;
-            } else if (regNo.includes('cm') || radioButtonValue=="r20_cse_ai_ml"){
+            } else if (regNo.includes('cm')){
                 credits = credits_r20_cse_ai_ml;
-            } else if (regNo.includes('ec') || radioButtonValue=="r20_ece"){
+            } else if (regNo.includes('ec')){
                 credits = credits_r20_ece;
-            } else if (regNo.includes('ee') || radioButtonValue=="r20_eee"){
+            } else if (regNo.includes('ee')){
                 credits = credits_r20_eee;
-            } else if (regNo.includes('ce') || radioButtonValue=="r20_civil"){
+            } else if (regNo.includes('ce')){
+                credits = credits_r20_civil;
+            } else if (radioButtonValue=="r20_cse" || radioButtonValue=="r20_it" || radioButtonValue=="r20_cse_ds" || radioButtonValue=="r20_cse_iot"){
+                credits = credits_r20_cse;
+            } else if (radioButtonValue=="r20_cse_ai_ml"){
+                credits = credits_r20_cse_ai_ml;
+            } else if (radioButtonValue=="r20_ece"){
+                credits = credits_r20_ece;
+            } else if (radioButtonValue=="r20_eee"){
+                credits = credits_r20_eee;
+            } else if (radioButtonValue=="r20_civil"){
                 credits = credits_r20_civil;
             }
+
 
             for (let sem of Object.keys(grades)){
                 var sem_gpa = 0;
