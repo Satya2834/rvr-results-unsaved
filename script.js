@@ -433,6 +433,29 @@ const credits_r20_civil = {
 var tot_gpa;
 var cumulative_gpa;
 
+var radioButtonValue = false;
+
+window.onload = function() {
+    var radioButtons = document.getElementsByName('r20');
+    
+    radioButtons.forEach(function(radioButton) {
+        radioButton.addEventListener('change', function() {
+            console.log('Selected value: ' + this.value);
+            radioButtonValue = this.value;
+            const reg_no = document.getElementById("textInput").value.length;
+            const res_button = document.getElementById("fetchButton");
+            
+            if ((reg_no==8 || reg_no==9) && radioButtonValue){
+                res_button.style.cursor = 'pointer';
+                res_button.disabled = false;
+            } else {
+                res_button.style.cursor = 'not-allowed';
+                res_button.disabled = true;
+            }
+        });
+    });
+};
+
 function clearContent(elementID) { 
     document.getElementById(elementID).innerHTML = ""; 
 } 
@@ -473,14 +496,7 @@ document.getElementById("server").addEventListener('change', () => {
 document.getElementById("textInput").addEventListener('input', () => {
     const reg_no = document.getElementById("textInput").value.length;
     const res_button = document.getElementById("fetchButton");
-    var radioButtonValue = false;
-    var radioButtons = document.getElementsByName('r20');
-    for (var i = 0; i < radioButtons.length; i++) {
-        if (radioButtons[i].checked) {
-            radioButtonValue = radioButtons[i].value;
-            break;
-        }
-    }
+    
     if ((reg_no==8 || reg_no==9) && radioButtonValue){
         res_button.style.cursor = 'pointer';
         res_button.disabled = false;
@@ -595,14 +611,7 @@ document.getElementById('fetchButton').addEventListener('click', () => {
     clearContent("results");
     showProgressBar();
     var textValue = document.getElementById('textInput').value.toLowerCase();
-    var radioButtonValue;
-    var radioButtons = document.getElementsByName('r20');
-    for (var i = 0; i < radioButtons.length; i++) {
-        if (radioButtons[i].checked) {
-            radioButtonValue = radioButtons[i].value;
-            break;
-        }
-    }
+
     const url = 'https://rvrjcce.ac.in/examcell/results/regnoresultsR1.php?q='+textValue;
 
     fetchWithRetry(url)
